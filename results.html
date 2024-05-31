@@ -1,0 +1,35 @@
+
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>How likely are you to recommend this program to a friend?</th>
+        <th>What is your favorite feature of the program?</th>
+        <th>What could be improved about the program?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Results will be added here dynamically -->
+    </tbody>
+  </table>
+  <script>
+    const spreadsheetId = '1kxngkgWy2OWOmWLfLyooZ-b7VMD3fRcX5JfMYmipTWU';
+    const sheetName = 'Form Responses 1';
+    const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?sheet=${sheetName}&tq=SELECT%20A%2C%20B%2C%20C%2C%20D%2C%20E%2C%20F`;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        const table = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        json.table.rows.forEach(row => {
+          const newRow = table.insertRow();
+          row.c.forEach(cell => {
+            const newCell = newRow.insertCell();
+            newCell.textContent = cell.v;
+          });
+        });
+      });
+  </script>
