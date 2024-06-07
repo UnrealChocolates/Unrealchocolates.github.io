@@ -1,36 +1,35 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title style="font-family: consolas; font-size: 140px; font-weight: bold"> My website </title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-    body {
-      background-image: url('https://images.unsplash.com/photo-1610450949065-1f2841536c88?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlfGVufDB8fDB8fHww.png');
-      background-size: cover;
-    }
-  </style>
-</head>
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>How likely are you to recommend this program to a friend?</th>
+        <th>What is your favorite feature of the program?</th>
+        <th>What could be improved about the program?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Results will be added here dynamically -->
+    </tbody>
+  </table>
+  <script>
+    const spreadsheetId = '1kxngkgWy2OWOmWLfLyooZ-b7VMD3fRcX5JfMYmipTWU';
+    const sheetName = 'Form Responses 1';
+    const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?sheet=${sheetName}&tq=SELECT%20A%2C%20B%2C%20C%2C%20D%2C%20E%2C%20F`;
 
-  
-  <body style="text-align: center;">
-    <div style="margin-top: 40px;"></div> <!--- Inserted to lower text location --->
-    <h1 style="font-size: 50px; display: inline-block; color: white;">Hello, welcome to unrealchocolates.github.io!</h1>
-  
-    <div style="margin-top: 10px;"> </div> <!--- Inserted to lower text location --->
-
-    <p style="text-align: center; color: white; font-weight: bold;">Now... What is your favorite Chocolate?<p>
-        <p style="text-align: center; color: white; font-weight: bold;">Mine is dark chocolate<p>
-<button style="padding: 15px 32px; background-color: white; color: black; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='white'" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSd2P6IGLYfSk7HHv47qtnp2YtaFCuHkfMEICy_zYpmBcoLk8g/viewform'">Submit your favorite chocolate</button>
-
-<p style="text-align: center; margin: auto; margin-top: 20px;">
-    <a style="padding: 15px 32px; background-color: white; color: black; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" href="https://docs.google.com/spreadsheets/d/1kxngkgWy2OWOmWLfLyooZ-b7VMD3fRcX5JfMYmipTWU/edit?resourcekey#gid=585136227" target="_blank" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='white'">Results</a>
-</p>
-
-  
-    <a style="padding: 15px 32px; background-color: white; color: black; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; position: absolute; top: 20px; right: 20px;" href="aboutme.html">About Me</a>
-
-
-</body>
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        const table = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        json.table.rows.forEach(row => {
+          const newRow = table.insertRow();
+          row.c.forEach(cell => {
+            const newCell = newRow.insertCell();
+            newCell.textContent = cell.v;
+          });
+        });
+      });
+  </script>
