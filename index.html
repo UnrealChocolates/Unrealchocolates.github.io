@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> My website </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+<style>
+body {
+background-image: url('https://static.vecteezy.com/system/resources/previews/006/893/306/non_2x/textured-crumpled-black-paper-background-free-photo.jpg');
+background-size: cover;
+}
+#container {
+justify-content: center;
+align-items: center;
+text-align: center;
+display: flex;
+flex-direction: column;
+height: 100%;
+position: fixed;
+bottom: 0;
+right: 0;
+left: 0;
+top: 0;
+}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title style="font-family: consolas; font-size: 140px; font-weight: bold"> My website </title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-    body {
-      background-image: url('https://img.freepik.com/free-photo/white-paper-texture-background_23-2151025702.jpg');
-      background-size: cover;
-    }
-  </style>
-</head>
-  <center>
-    <h1 style="font-family: 'Brush Script MT', cursive; color: black; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Two minds think alike</h1>
+h1 {
+font-size: 40pt;
+font-family: 'Verdana';
+color: white;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+button {
+background-color: white; 
+border: none; 
+color: black; 
+padding: 30px 64px; 
+text-align: center; 
+text-decoration: none; 
+display: inline-block; 
+font-size: 32px; 
+margin: 8px 4px; 
+cursor: pointer; 
+border-radius: 10px;
+}
+#center {
+display: flex;
+align-items: center;
+}
+    </style>
+  </head>
+  <body>
+<div id = "container">
+<h1>Two minds think alike</h1>
+<div id = "center">
+<img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation" style="transform: scaleX(-1);">
+<button>Start!</button>
+<img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation">
+</div>
+</div>
 
-  </center>
-
-
-  <center>
-    <img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation" style="transform: scaleX(-1);">
-  </center>
-
-  <center>
-    <img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation">
-  </center>
-  
-<body>
-  <button
-    style="background-color: white; border: none; color: black; padding: 30px 64px; text-align: center; text-decoration: none; display: inline-block; font-size: 32px; margin: 8px 4px; cursor: pointer; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px;"
-    onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='white'"
-    onclick="window.location.href='page2.html'">Start</button>
-</body>
-
-
-</body>
+  </body>
+</html>
