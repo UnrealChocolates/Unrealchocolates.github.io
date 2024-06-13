@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question</title>
+	<style>
+      body {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/006/893/306/non_2x/textured-crumpled-black-paper-background-free-photo.jpg');
+        background-size: cover;
+        font: 20pt Segoe UI, sans-serif;
+        color: white; 
+      }
+      button {
+        background-color: white; 
+        border: none; 
+        color: black; 
+        padding: 30px 64px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 32px; 
+        margin: 8px 4px; 
+        cursor: pointer; 
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: gray; 
+      }
+      #container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+      #buttonsDiv {
+        padding: 5%;
+      }
+      .final {
+        color:white;
+        text-align: center;
+        display: none;
+        position: absolute;
+        justify-content: center; 
+        flex-direction: column;
+        align-items: center;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+    }
+    img {
+      width: 500px;
+    }
+    #win {
+      background-color: green;
+    }
+    #lose {
+      background-color: red;
+    }
+	</style>
+  </head>
+  <body>
+    <div id = "container">
+      <h1>Question 4:</h1>
+      <p>Should Pasta be broken?</p>
+      <img src = "https://hips.hearstapps.com/hmg-prod/images/woman-breaking-spaghetti-high-res-stock-photography-523335262-1534447620.jpg">
+      <div id = "buttonsDiv">
+        <button id = "yes" onclick="wrong();">Yes</button> 
+        <button id = "no" onclick="correct();">No</button>
+      </div>
+    </div>
 
+        <div id = "win" class = "final">
+      <h1>Our minds think alike on that question!</h1> <br/>
+      <button onclick = "window.location.href = 'question4.html';" class = "finalButton">Continue?</button>
+    </div>
+    <div id = "lose" class = "final">
+        <h1>Our minds may have separate opinions on that question...</h1> <br/>
+        <button onclick = "window.location.href = 'index.html';" class = "finalButton">Retry?</button>
+    </div>
+
+	<script>
+    function correct() {
+      allElements = document.getElementsByClassName("body");
+      for (let i = 0; i < allElements.length; i++) {
+          allElements[i].style.display = "none";
+      }
+      document.getElementById("win").style.display = "flex";
+    }
+    function wrong() {
+      allElements = document.getElementsByClassName("body");
+      for (let i = 0; i < allElements.length; i++) {
+          allElements[i].style.display = "none";
+      }
+      document.getElementById("lose").style.display = "flex";
+    }
+  </script>
+  </body>
+</html>
