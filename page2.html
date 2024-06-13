@@ -1,63 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title> My website </title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-<style>
-body {
-background-image: url('https://static.vecteezy.com/system/resources/previews/006/893/306/non_2x/textured-crumpled-black-paper-background-free-photo.jpg');
-background-size: cover;
-}
-#container {
-justify-content: center;
-align-items: center;
-text-align: center;
-display: flex;
-flex-direction: column;
-height: 100%;
-position: fixed;
-bottom: 0;
-right: 0;
-left: 0;
-top: 0;
-}
 
-h1 {
-font-size: 40pt;
-font-family: 'Verdana';
-color: white;
-text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-button {
-background-color: white; 
-border: none; 
-color: black; 
-padding: 30px 64px; 
-text-align: center; 
-text-decoration: none; 
-display: inline-block; 
-font-size: 32px; 
-margin: 8px 4px; 
-cursor: pointer; 
-border-radius: 10px;
-}
-#center {
-display: flex;
-align-items: center;
-}
-    </style>
-  </head>
-  <body>
-<div id = "container">
-<h1>Two minds think alike</h1>
-<div id = "center">
-<img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation" style="transform: scaleX(-1);">
-<button>Press Me!</button>
-<img src="https://media2.giphy.com/media/vELpqfOEPXRABWQRgv/giphy.gif?cid=6c09b9528kpr9gx8w3dx6e11rd113ya49xnspr5r2jgv1zap&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="Brain Synchronisation">
-</div>
-</div>
-    
-  </body>
-</html>
+<!-- This is the back ground -->
+<body style="background-image: url(https://static.vecteezy.com/system/resources/previews/006/893/306/non_2x/textured-crumpled-black-paper-background-free-photo.jpg'); background-size: cover;">
+
+  <!-- This is the opacity to darken the background -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); border-radius: 0px;">
+  </div>
+
+  <!-- This is the title -->
+  <h1 style="text-align: center; color: white; font-size: 50px; position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%);"><b>What is two minds think alike?</b></h1>
+
+  <!-- This is body paragraph -->
+  <p style="text-align: center; color: white; font-size: 25px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    Two minds think alike is a term used to emphasize a coincidence, or two people reaching the same conclusion in any manner at the same time. Thinking of a response similar to each other. In this website, you are given some of life's biggest questions which you answer will be submitted based on your own opinion against mine (The creator), if we get the same answer, our two minds think alike! Simple as that! 
+
+The website will respond to your choices when you pick Yes or No on the questions. It will appear green if we have the same answer and appear red if we have different answers. In that case... We do not think alike. Its just some fun, don't take it seriously. Unlock yourself.
+  </p>
+
+  <!-- Begin button -->
+  <button style="background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);" onmouseover="this.style.backgroundColor='#d3d3d3'" onmouseout="this.style.backgroundColor='#4CAF50'" onclick="window.location.href='question1.html'">Begin</button>
